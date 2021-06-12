@@ -76,8 +76,8 @@ class DevtoServiceProvider implements ServiceInterface
 
             $date = $published->format('Ymd');
 
-            $content = new Content($this->data_path . '/' . $date . '_' . $full_article['slug'] . '.md');
-            $content->save($full_article['body_markdown']);
+            $content = new Content($full_article['body_markdown']);
+            $content->save($this->data_path . '/' . $date . '_' . $full_article['slug'] . '.md');
         }
     }
 }
